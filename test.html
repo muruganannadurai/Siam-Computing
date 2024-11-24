@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Masonry Gallery</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="image-gallery">
+       
+    </div>
+
+    <div id="imageModal" class="modal" >  
+        <div class="close_div">
+            <span class="close-modal">&times;</span>
+        </div>      
+        <div class="model-dialogue">           
+            <div class="model-header">
+                <div class="user-profile">
+                    <a href="/@cbarbalis" class="user-link">
+                        <img class="user-avatar" src="https://images.unsplash.com/profile-1460461456342-a21eb34982a0?w=32&dpr=1&crop=faces&bg=%23fff&h=32&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Chris Barbalis's profile">
+                    </a>
+                    <div class="user-info">
+                        <a href="/@cbarbalis" class="user-name">Chris Barbalis</a>
+                        <div class="user-for">For <a href="/plus?referrer=%2Fphotos%2Fa-view-of-the-rolling-hills-and-trees-in-the-distance-kSBO7Huj3d4" class="user-company">Unsplash+</a></div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="like-button" title="Like this image">
+                        <svg class="icon heart" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.424 4.594c-2.101-2.125-5.603-2.125-7.804 0l-1.601 1.619-1.601-1.62c-2.101-2.124-5.603-2.124-7.804 0-2.202 2.126-2.102 5.668 0 7.894L12.019 22l9.405-9.513a5.73 5.73 0 0 0 0-7.893Z"></path>
+                        </svg>
+                    </button>
+                    <button class="add-to-collection" title="Add this image to a collection">
+                        <svg class="icon plus" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.8 10.5h-8.3V2.2h-3v8.3H2.2v3h8.3v8.3h3v-8.3h8.3z"></path>
+                        </svg>
+                    </button>
+                    <button class="download-button" title="Download">
+                        <svg class="icon lock" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 11h-1.5V7.5C17.5 4.5 15 2 12 2S6.5 4.5 6.5 7.5V11H5c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1h14c.6 0 1-.4 1-1v-9c0-.6-.4-1-1-1ZM8.5 7.5C8.5 5.6 10.1 4 12 4s3.5 1.6 3.5 3.5V11h-7V7.5Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>       
+            <div class="modal-content">
+                <svg class="prev-arrow" width="24" height="24" viewBox="0 0 24 24" version="1.1" aria-hidden="false" style="flex-shrink: 0;">
+                    <desc lang="en-US">Chevron left</desc>
+                    <path d="M15.5 18.5 14 20l-8-8 8-8 1.5 1.5L9 12l6.5 6.5Z"></path>
+                </svg>
+                
+                <img id="mainImage" src="" alt="Large Image">
+                
+                <!-- Next Arrow (Chevron Right) -->
+                <svg class="next-arrow" width="24" height="24" viewBox="0 0 24 24" version="1.1" aria-hidden="false" style="flex-shrink: 0;">
+                    <desc lang="en-US">Chevron right</desc>
+                    <path d="M8.5 5.5 10 4l8 8-8 8-1.5-1.5L15 12l-6.5-6.5Z"></path>
+                </svg>
+                <div class="image-info">
+                    <div class="count_details">
+                        <div class="stats">
+                            <div>
+                                <h3 class="stat-title">Views</h3>
+                                <span class="stat-value view">374874</span>
+                            </div>
+                            <div>
+                                <h3 class="stat-title">Downloads</h3>
+                                <span class="stat-value download">2466</span>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="action-btn share-btn">
+                                <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M13 20v-5.5c-5.556 0-8.222 1-11 5.5C2 13.25 5.222 8.625 13 7.5V2l9 9-9 9Z"></path>
+                                </svg>
+                                <span>Share</span>
+                            </button>
+                            <button class="action-btn info-btn">
+                                <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm1.111 8.889v6.667H10.89v-6.667h2.222Zm0-4.445v2.223H10.89V6.444h2.222Z"></path>
+                                </svg>
+                                <span>Info</span>
+                            </button>
+                            <button class="action-btn more-actions-btn">
+                                <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M6 12c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2Zm14-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Zm-8 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Z"></path>
+                                </svg>
+                                <span>More Actions</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-details">
+                        <div class="location">
+                            <a href="/s/photos/lake-tekapo%2C-new-zealand" class="location-link">
+                                <svg class="map-icon" width="16" height="16" viewBox="0 0 24 24">
+                                    <path d="M17.6 4.2C16 2.7 14.1 2 12 2s-4 .7-5.6 2.2C4.8 5.7 4 7.7 4 10.2c0 1.7.7 3.5 2 5.4 1.3 2 3.3 4.1 6 6.4 2.7-2.3 4.7-4.4 6-6.4 1.3-2 2-3.8 2-5.4 0-2.5-.8-4.5-2.4-6zm-1.1 10.1c-1 1.5-2.5 3.2-4.5 5.1-2-1.9-3.5-3.6-4.5-5.1-1-1.5-1.5-2.9-1.5-4.1 0-1.8.6-3.3 1.7-4.5C8.9 4.6 10.3 4 12 4s3.1.6 4.3 1.7c1.2 1.2 1.7 2.6 1.7 4.5 0 1.2-.5 2.5-1.5 4.1zm-2-4.3c0 1.4-1.1 2.5-2.5 2.5S9.5 11.4 9.5 10s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5z"></path>
+                                </svg>
+                                <span class="nameCity">Lake Tekapo, New Zealand</span>
+                            </a>
+                        </div>
+                        <div class="publication">
+                            <svg class="calendar-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M20 2h-3V0h-2v2H9V0H7v2H4c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V8h16v12z"></path>
+                            </svg>
+                            <span>Published on September 4, 2023</span>
+                        </div>
+                        <div class="camera-info">
+                            <svg class="camera-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm1 14h-2v-4h2v4Zm0-6h-2V7h2v3Z"></path>
+                            </svg>
+                            <span>NIKON CORPORATION, NIKON D850</span>
+                        </div>
+                        <div class="license-info">
+                            <svg class="license-icon" width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M21 10h-3V4h-2v6H8V4H6v6H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V12c0-1.1-.9-2-2-2zM12 18H6v-6h6v6zm6 0h-4v-6h4v6z"></path>
+                            </svg>
+                            <span>Free to use under the Unsplash License</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="image-gallery" class="image-gallery">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+    window.addEventListener('load', loadImg);
+
+    function loadImg() {
+        const url = "https://api.unsplash.com/photos/?client_id=PLQFFesBpaV2HSs5CQ5DlkaozWGWYXEAqZEs32iWue0";
+        const imageGallery = document.querySelector('.image-gallery');
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(photo => {
+                    const imageItem = document.createElement('div');
+                    imageItem.className = 'image-item';
+                    const imageElement = document.createElement('img');
+                    imageElement.src = photo.urls.thumb; 
+                    imageElement.alt = photo.alt_description || "Unsplash Image"; 
+                    imageElement.setAttribute('data-id', photo.id);
+
+                    imageItem.appendChild(imageElement);
+                    imageGallery.appendChild(imageItem);
+                });
+
+                bindImageClick();
+            })
+            .catch(error => {
+                console.error('Error fetching images:', error);
+            });
+    }
+
+    
+    function bindImageClick() {
+        $('.image-item img').click(function () {
+            const imageSrc = $(this).attr('src');
+            const imageAlt = $(this).attr('alt');
+            const imgId = $(this).attr('data-id');
+            openPopup(imgId, imageSrc, imageAlt, true);
+        });
+
+        $('.close-modal, .modal').click(function (e) {
+            if ($(e.target).is('.close-modal') || $(e.target).is('.modal')) {
+                $('#imageModal').removeClass('show');
+            }
+        });
+    }
+
+    function openPopup(imgId, imageSrc, imageAlt, first = null){
+
+        $('#mainImage').attr('src', imageSrc);
+        $('#mainImage').attr('alt', imageAlt);
+        $('#mainImage').attr('data-id', imgId);
+        $('#mainImage').attr('data-id', imgId);
+        $('.next-arrow').attr('data-id', imgId);
+        $('.prev-arrow').attr('data-id', imgId);
+        $('#imageModal').addClass('show');
+
+        if(first === true){
+            localStorage.setItem('image_id', imgId);
+        }
+
+        $.ajax({
+            url: `https://api.unsplash.com/photos/${imgId}?client_id=PLQFFesBpaV2HSs5CQ5DlkaozWGWYXEAqZEs32iWue0`, 
+            method: "GET",
+            success: function (data) {
+                console.log(data);
+              
+                const user = data.user;
+                const userName = user.name || user.username;
+                const userAvatar = user.profile_image ? user.profile_image.medium : '';
+                const userProfileLink = user.links.html;
+                const userBio = user.bio || 'No bio available';
+                const userCompany = user.portfolio_url ? user.portfolio_url : 'No company linked';
+                const view = data.views;
+                const download = data.downloads;
+
+               
+                $('.user-avatar').attr('src', userAvatar);
+                $('.user-name').text(userName).attr('href', userProfileLink);
+                $('.user-bio').text(userBio);
+                $('.user-company').text(userCompany);
+                $('.view').text(view);
+                $('.download').text(download);
+
+                const relatedCollections = data.related_collections.results;
+     
+                $('#image-gallery').empty();
+
+                relatedCollections.forEach(collection => {
+                    const collectionTitle = collection.title;                    
+                    const collectionId = collection.cover_photo.id;
+                    const collectionThumbnail = collection.cover_photo.urls.thumb;
+                    const profile_image = collection.user.profile_image.small;                   
+                   
+                    const collectionHTML = `
+                        <div class="related-collection-item ">
+                            <img src="${collectionThumbnail}" alt="${collectionTitle}" data-id="${collectionId}" class="related-collection-image">
+                            <div class="related-imgtitle">
+                                <div class="user-profile">
+                                    <a href="/@cbarbalis" class="user-link">
+                                        <img class="rel-user-avatar" src="${profile_image}" alt="Chris Barbalis's profile">
+                                    </a>
+                                </div>
+                                <span class="rel-collection-title">${collectionTitle}</span>
+                            </div>
+                        </div>
+                    `;
+
+                  
+                    $('#image-gallery').append(collectionHTML);
+                });
+            },
+            error: function (err) {
+                console.log('Error fetching image details:', err);
+            }
+        });
+    }
+
+ $(document).on("click",'.related-collection-image', function(){
+        const imageSrc = $(this).attr('src');
+        const imageAlt = $(this).attr('alt');
+        const imgId = $(this).attr('data-id');
+        openPopup(imgId, imageSrc, imageAlt, true);
+        
+})
+$(document).on("click", ".prev-arrow", function(){
+    const imgid = $(this).attr('data-id');
+});
+
+var index=0;
+var ArrayList=[];
+$(document).on("click", ".next-arrow", function(){    
+    loadRelated(1); 
+});
+
+function loadRelated(type){
+    const imgid = localStorage.getItem('image_id');
+           $.ajax({
+               url: `https://api.unsplash.com/photos/${imgid}?client_id=PLQFFesBpaV2HSs5CQ5DlkaozWGWYXEAqZEs32iWue0`, // Dynamic URL
+               method: "GET",
+               success: function (data) {
+                   ArrayList= data.related_collections.results;
+                   if(type === 1){
+                        if(ArrayList.length-1 ==  index){
+                            index = 0;
+                        }else{
+                            index ++;
+                        }
+                   }else{
+                        if(index ==  0){
+                            index = ArrayList.length-1;
+                        }else{
+                            index --;
+                        }
+                   }
+                   let img = ArrayList[index];
+                   
+                   let id = img.cover_photo.id;
+                   $.ajax({
+                       url: `https://api.unsplash.com/photos/${id}?client_id=PLQFFesBpaV2HSs5CQ5DlkaozWGWYXEAqZEs32iWue0`, // Dynamic URL
+                       method: "GET",
+                       success: function (data) {
+                           console.log('data', data);
+                           let imageSrc = data.urls.thumb; 
+                           let imageAlt = data.alt_description || "Unsplash Image"; 
+                           let relatedId = data.id;
+                        //    console.log('imageSrc', imageSrc);
+                        //    console.log('imageAlt', imageAlt);
+                        //    console.log('id', id);
+                           openPopup(relatedId, imageSrc, imageAlt);
+                       }
+                   });
+               }
+           });
+}
+
+$(document).on("click", ".prev-arrow", function(){  
+        loadRelated(2);    
+});
+// console.log("collection1",ArrayList);
+</script>
+</body>
+</html>
+
