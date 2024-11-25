@@ -461,11 +461,73 @@ text-overflow: ellipsis;
     margin: 0 0 6px;
 }
 .action-btn svg {
-    margin-right: 8px; /* Space between icon and text */
+    margin-right: 8px; 
 }
 .stats div{
     text-align: left;
 }
+
+
+
+
+
+
+.share-container {
+    position: relative;
+    display: inline-block;
+}
+
+.share-popup {
+    display: none;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #767676;
+    border-radius: 4px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    z-index: 1000;
+    padding: 10px;
+    width: 142px;
+}
+
+.share-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.share-popup li {
+    margin: 8px 0;
+}
+
+.share-popup li a,
+.share-popup li button {
+    display: flex;
+    text-decoration: none;
+    color: #767676;
+    display: block;
+    font-size: 20px;
+    padding: 5px 8px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    }    
+.share-popup li a svg{
+    flex-shrink: 0;
+    padding-right: 10px;
+}
+.share-popup li button:hover,
+.share-popup li a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
 
 @media (max-width: 600px) {
     .modal {        
